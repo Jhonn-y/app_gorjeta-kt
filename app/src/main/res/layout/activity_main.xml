@@ -58,8 +58,8 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/total_people"
-        android:layout_width="379dp"
-        android:layout_height="52dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="@+id/sp_total_people"
         app:layout_constraintStart_toStartOf="@+id/sp_total_people"
@@ -68,7 +68,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/it_total_people"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:hint="Coloque o numero de pessoas na mesa"
             />
     </com.google.android.material.textfield.TextInputLayout>
