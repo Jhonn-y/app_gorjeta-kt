@@ -5,15 +5,140 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="16dp"
+        android:text="Tips Calculator"
+        android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/tv_subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Preencha os campos abaixo para realizar o calculo da sua conta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/it_total"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_subtitle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/it_total_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Coloque o valor total da conta"
+            android:inputType="numberDecimal" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Spinner
+        android:id="@+id/sp_total_people"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/it_total"
+        app:layout_constraintStart_toStartOf="@+id/it_total"
+        app:layout_constraintTop_toBottomOf="@+id/it_total" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/total_people"
+        android:layout_width="379dp"
+        android:layout_height="52dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/sp_total_people"
+        app:layout_constraintStart_toStartOf="@+id/sp_total_people"
+        app:layout_constraintTop_toBottomOf="@+id/sp_total_people">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/it_total_people"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Coloque o numero de pessoas na mesa"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <RadioGroup
+        android:id="@+id/rg_percentage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/sp_total_people"
+        app:layout_constraintStart_toStartOf="@+id/sp_total_people"
+        app:layout_constraintTop_toBottomOf="@+id/total_people">
+
+        <RadioButton
+            android:id="@+id/rb_option_one"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="10%" />
+
+        <RadioButton
+            android:id="@+id/rb_option_two"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="15%" />
+
+        <RadioButton
+            android:id="@+id/rb_option_tree"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="20%" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_clean"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:text="limpar"
+        app:layout_constraintEnd_toEndOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="@+id/sp_total_people"
+        app:layout_constraintTop_toBottomOf="@+id/rg_percentage" />
+
+    <Button
+        android:id="@+id/btn_calculate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="calcular"
+        app:layout_constraintEnd_toEndOf="@+id/sp_total_people"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/rg_percentage" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_clean"
+        tools:text="56" />
 </androidx.constraintlayout.widget.ConstraintLayout>
