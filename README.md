@@ -3,6 +3,8 @@
 
 ## :camera_flash: Screenshots
 
+### v1
+
 <table>
   <tr>
     <th>
@@ -22,7 +24,30 @@
   </tr>
 </table>
 
+### v2
+
+<table>
+  <tr>
+    <th>
+      <text>Padrão</text>  
+    </th>
+    <th>
+      <text>Caso mais de 10 pessoas</text>  
+    </th>
+    <th>
+      <text>Tela de resumo separada</text>  
+    </th>
+    </tr>
+    <tr>
+    <td> <img src="https://github.com/user-attachments/assets/2c833e8b-e211-45bc-a3f0-699c79d20353"width =250px ></td>
+    <td><img src="https://github.com/user-attachments/assets/d1b5c37a-b6e5-4949-adc8-e847d060ab69" width = 250px></td>
+    <td><img src="https://github.com/user-attachments/assets/a353e2c1-4ac7-42f9-b1a9-5efd00801173" width = 250px></td>
+  </tr>
+</table>
+
 ## Tecnologias
+  - Mudança no style padronizado
+  - Aplicação de Locale
   - Activity
   - SnackBar
   - Spinner
