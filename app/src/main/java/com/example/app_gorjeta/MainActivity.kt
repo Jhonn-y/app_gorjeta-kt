@@ -1,5 +1,6 @@
 package com.example.app_gorjeta
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
@@ -49,25 +50,9 @@ class MainActivity : AppCompatActivity() {
                     binding.spTotalPeople.getItemAtPosition(0)
                 }
             }
-        var percentage: Double = 0.0
-
-        binding.rbOptionOne.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                percentage = 0.1
-            }
-        }
-        binding.rbOptionTwo.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                percentage = 0.15
-            }
-        }
-        binding.rbOptionTree.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                percentage = 0.2
-            }
-        }
 
         binding.btnCalculate.setOnClickListener {
+            val percentage = binding.itPercentage.text
             val itTotal = binding.itTotalText.text
             val itTotalPeople = binding.itTotalPeople.text
             val totalPeople: Int = if (binding.spTotalPeople.selectedItemPosition == 11) {
@@ -76,7 +61,7 @@ class MainActivity : AppCompatActivity() {
                 binding.spTotalPeople.selectedItemPosition
             }
             var totalWithTips = 0.0
-            if (itTotal?.isEmpty() == true || totalPeople == 0 || percentage == 0.0 ||
+            if (itTotal?.isEmpty() == true || totalPeople == 0 || percentage?.isEmpty() == true ||
                 (totalPeople == 11 && itTotalPeople?.isEmpty() == true)
             ) {
                 Snackbar.make(
@@ -88,23 +73,31 @@ class MainActivity : AppCompatActivity() {
             } else {
                 val itTotalValue = itTotal.toString().toDouble()
                 val totalForPeople = itTotalValue / totalPeople
-                val tips = totalForPeople * percentage
+                val tips = totalForPeople * percentage.toString().toInt() / 100
                 totalWithTips = totalForPeople + tips
+                val intent = Intent(this, ResumeActivity::class.java)
+                intent.apply {
+                    putExtra(KEY_TOTAL_CHECK, itTotalValue)
+                    putExtra(KEY_TOTAL_PEOPLE, totalPeople)
+                    putExtra(KEY_PERCENTAGE, percentage.toString())
+                    putExtra(KEY_RESULT_TOTAL, totalWithTips)
 
+                startActivity(intent)
+                }
+                clean()
             }
-            binding.tvResult.text = "Total com gorjeta: " + String.format("%.2f", totalWithTips)
-
         }
 
         binding.btnClean.setOnClickListener {
-            binding.itTotalText.setText("")
-            binding.rbOptionOne.isChecked = false
-            binding.rbOptionTwo.isChecked = false
-            binding.rbOptionTree.isChecked = false
-            binding.spTotalPeople.setSelection(0)
-            binding.tvResult.text = ""
-
+            clean()
         }
 
+    }
+
+    private fun clean() {
+        binding.itTotalText.setText("")
+        binding.itPercentage.setText("")
+        binding.itTotalPeople.setText("")
+        binding.spTotalPeople.setSelection(0)
     }
 }

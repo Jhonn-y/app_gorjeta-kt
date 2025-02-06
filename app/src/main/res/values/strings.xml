@@ -1,5 +1,18 @@
 <resources>
-    <string name="app_name">app_gorjeta</string>
+    <string name="app_name">Tips Calculator</string>
+    <string name="title">Summary</string>
+    <string name="subtitle">Take a look below the total with tips!</string>
+    <string name="total_bill">Check:</string>
+    <string name="total_people">Total of people:</string>
+    <string name="percentage">Percentage:</string>
+    <string name="total_tips">TOTAL:</string>
+    <string name="btn_recalculate">calculate again</string>
+    <string name="subtitle_home">Fulfill all the fields below to calculate the tips</string>
+    <string name="total_value_check">Fill with the total check</string>
+    <string name="total_value_people">Fill with the number of people</string>
+    <string name="btn_clean">clean</string>
+    <string name="btn_done">calculate</string>
+
     <string-array name="num_people">
         <item>0</item>
         <item>1</item>
@@ -12,6 +25,6 @@
         <item>8</item>
         <item>9</item>
         <item>10</item>
-        <item>+ de 10 pessoas</item>
+        <item>+ de 10 </item>
     </string-array>
 </resources>

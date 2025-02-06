@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gorjeta App</string>
+    <string name="title">Valor final</string>
+    <string name="subtitle">Confira abaixo o valor final da conta com a gorjeta!</string>
+    <string name="total_bill">Valor da conta:</string>
+    <string name="total_people">Total de pessoas:</string>
+    <string name="percentage">Porcentagem:</string>
+    <string name="total_tips">TOTAL:</string>
+    <string name="btn_recalculate">calcular novamente</string>
+    <string name="subtitle_home">Preencha os campos abaixo para realizar o calculo da sua conta</string>
+    <string name="total_value_check">Coloque o valor total da conta</string>
+    <string name="total_value_people">Coloque o numero de pessoas na mesa</string>
+    <string name="btn_clean">limpar</string>
+    <string name="btn_done">calcular</string>
+</resources>

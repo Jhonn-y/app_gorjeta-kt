@@ -6,4 +6,7 @@
     </style>
 
     <style name="Theme.App_gorjeta" parent="Base.Theme.App_gorjeta" />
+    <style name="separator">
+        <item name="android:background">@color/black</item>
+    </style>
 </resources>

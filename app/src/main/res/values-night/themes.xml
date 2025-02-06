@@ -3,5 +3,9 @@
     <style name="Base.Theme.App_gorjeta" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+
+    </style>
+    <style name="separator">
+        <item name="android:background">@color/white</item>
     </style>
 </resources>
